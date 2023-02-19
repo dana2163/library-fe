@@ -1,0 +1,15 @@
+.input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.binary-input {
+  display: flex;
+  flex-direction: row;
+}
+
+.binary-input input[type='checkbox'] {
+  margin-right: 5px;
+}
