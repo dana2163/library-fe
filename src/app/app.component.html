@@ -1,20 +1,60 @@
-<div class="input-container">
-  <label>Desiatková sústava:</label>
-  <input
-    type="number"
-    [(ngModel)]="decimalNumber"
-    (ngModelChange)="decimalToBinary()"
-  />
-</div>
-<div class="input-container">
-  <label>Binárna sústava:</label>
-  <div class="binary-input">
-    <div *ngFor="let bit of binaryArray; let i = index; trackBy: trackByIndex">
-      <input
-        type="checkbox"
-        [(ngModel)]="binaryArray[i]"
-        (ngModelChange)="binaryToDecimal()"
-      />
-    </div>
+<nav>
+  <ul>
+    <li (click)="changeMenu(menuType.Users)">User</li>
+    <li (click)="changeMenu(menuType.Books)">Books</li>
+    <li (click)="changeMenu(menuType.Borrowing)">Borrowing</li>
+  </ul>
+</nav>
+
+  <div *ngIf="menu === menuType.Users">
+    <form [formGroup]="userFormGroup" (ngSubmit)="addUser()">
+      <input formControlName="id" type="text" placeholder="Zadaj id">
+      <input formControlName="name" type="text" placeholder="Zadaj meno">
+      <input formControlName="contact" type="text" placeholder="Zadaj kontakt">
+      <button type="submit">Pridat usera</button>
+    </form>
+
+    <table>
+      <thead>
+      <th>ID</th>
+      <th>Meno</th>
+      <th>Kontakt</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.contact}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
+
+  <div *ngIf="menu === menuType.Books">
+    <form [formGroup]="bookFormGroup" (ngSubmit)="addBook()">
+      <input formControlName="autor" type="text" placeholder="Zadaj autor">
+      <input formControlName="title" type="text" placeholder="Zadaj nazov">
+      <input formControlName="count" type="text" placeholder="pocet stran">
+      <button type="submit">Pridat knihu</button>
+    </form>
+
+    <table>
+      <thead>
+      <th>Title</th>
+      <th>Autor</th>
+      <th>Nazov</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.count}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<div *ngIf="menu === menuType.Borrowing">
+  займы
 </div>

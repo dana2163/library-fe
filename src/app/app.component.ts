@@ -1,4 +1,23 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from "@angular/forms";
+
+interface User {
+  id: string,
+  name: string,
+  contact: string
+}
+
+interface Book {
+  author: string,
+  title: string,
+  count: number
+}
+
+enum Menu {
+  Users = 'USERS',
+  Books = 'BOOKS',
+  Borrowing = 'BORROWING'
+}
 
 @Component({
   selector: 'app-root',
@@ -6,29 +25,40 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  decimalNumber = 0;
-  binaryArray: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
+  bookFormGroup: FormGroup;
+  users: User[] = [];
+  books: Book[] = [];
+  menu = Menu.Books;
+  menuType = Menu;
+  userFormGroup: FormGroup;
 
-  decimalToBinary(): void {
-    let binaryArray: number[] = [];
-    let decimalNumber = this.decimalNumber;
-    while (decimalNumber > 0) {
-      let remainder = decimalNumber % 2;
-      binaryArray.unshift(remainder);
-      decimalNumber = Math.floor(decimalNumber / 2);
-    }
-    this.binaryArray = binaryArray.length > 0 ? binaryArray : [0];
+  constructor() {
+    this.bookFormGroup = new FormGroup({
+      autor: new FormControl(null),
+      title: new FormControl(null),
+      count: new FormControl(null),
+    });
+
+    this.userFormGroup = new FormGroup({
+      id: new FormControl(null),
+      name: new FormControl(null),
+      contact: new FormControl(null),
+    });
   }
 
-  binaryToDecimal(): void {
-    let decimalNumber = 0;
-    for (let i = this.binaryArray.length - 1; i >= 0; i--) {
-      decimalNumber += this.binaryArray[i] * Math.pow(2, 7 - i);
-    }
-    this.decimalNumber = decimalNumber;
+
+  addBook(): void {
+    this.books.push(this.bookFormGroup.value);
+    this.bookFormGroup.reset();
   }
 
-  trackByIndex(index: number, item: any): number {
-    return index;
+  addUser(): void {
+    this.users.push(this.userFormGroup.value);
+    this.userFormGroup.reset();
+  }
+
+
+  changeMenu(menu: Menu): void {
+    this.menu = menu;
   }
 }
