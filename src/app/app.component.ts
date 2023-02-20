@@ -12,6 +12,11 @@ interface Book {
   title: string,
   count: number
 }
+interface Borrowing {
+  id: string,
+  book: string,
+  user: string
+}
 
 enum Menu {
   Users = 'USERS',
@@ -28,9 +33,11 @@ export class AppComponent {
   bookFormGroup: FormGroup;
   users: User[] = [];
   books: Book[] = [];
+  borrowings: Borrowing[] = [];
   menu = Menu.Books;
   menuType = Menu;
   userFormGroup: FormGroup;
+  borrowingFormGroup: FormGroup;
 
   constructor() {
     this.bookFormGroup = new FormGroup({
@@ -44,8 +51,13 @@ export class AppComponent {
       name: new FormControl(null),
       contact: new FormControl(null),
     });
-  }
 
+    this.borrowingFormGroup = new FormGroup({
+      id: new FormControl(null),
+      book: new FormControl(null),
+      user: new FormControl(null),
+    });
+  }
 
   addBook(): void {
     this.books.push(this.bookFormGroup.value);
@@ -57,6 +69,10 @@ export class AppComponent {
     this.userFormGroup.reset();
   }
 
+  addBorrowing(): void {
+    this.borrowings.push(this.borrowingFormGroup.value);
+    this.borrowingFormGroup.reset();
+  }
 
   changeMenu(menu: Menu): void {
     this.menu = menu;
