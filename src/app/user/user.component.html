@@ -1,0 +1,47 @@
+<div *ngIf="menu === menuType.Users">
+    <form [formGroup]="userFormGroup" (ngSubmit)="addUser()">
+        <input formControlName="id" type="text" placeholder="Zadaj id">
+        <input formControlName="name" type="text" placeholder="Zadaj meno">
+        <input formControlName="contact" type="text" placeholder="Zadaj kontakt">
+        <button type="submit">Pridat usera</button>
+    </form>
+
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>Meno</th>
+        <th>Kontakt</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.contact}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<h1>Users</h1>
+
+<!-- Форма для добавления нового пользователя -->
+<form [formGroup]="userForm" (ngSubmit)="addUser()">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+    </div>
+    <div>
+        <label for="contact">Email:</label>
+        <input type="contact" id="email" formControlName="email">
+    </div>
+    <button type="submit">Add User</button>
+</form>
+
+<!-- Список пользователей -->
+<ul>
+    <li *ngFor="let user of users">
+        <span>{{ user.name }} ({{ user.contact }})</span>
+        <button (click)="deleteUser(user.id)">Delete</button>
+    </li>
+</ul>

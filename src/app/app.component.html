@@ -1,80 +1,24 @@
 <nav>
   <ul>
-    <li (click)="changeMenu(menuType.Users)">User</li>
-    <li (click)="changeMenu(menuType.Books)">Books</li>
-    <li (click)="changeMenu(menuType.Borrowing)">Borrowing</li>
+    <li (click)="changeMenu(menuType.Users)" routerLink="/user" routerLinkActive="active" >User</li>
+    <li (click)="changeMenu(menuType.Books)" routerLink="/book" routerLinkActive="active">Books</li>
+    <li (click)="changeMenu(menuType.Borrowing)" routerLink="/borrowing" routerLinkActive="active">Borrowing</li>
   </ul>
 </nav>
 
-  <div *ngIf="menu === menuType.Users">
-    <form [formGroup]="userFormGroup" (ngSubmit)="addUser()">
-      <input formControlName="id" type="text" placeholder="Zadaj id">
-      <input formControlName="name" type="text" placeholder="Zadaj meno">
-      <input formControlName="contact" type="text" placeholder="Zadaj kontakt">
-      <button type="submit">Pridat usera</button>
-    </form>
 
-    <table>
-      <thead>
-      <th>ID</th>
-      <th>Meno</th>
-      <th>Kontakt</th>
-      </thead>
-      <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.contact}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<ng-container *ngIf="actualMenu === menu.USERS">
+  <router-outlet></router-outlet>
+</ng-container>
 
-  <div *ngIf="menu === menuType.Books">
-    <form [formGroup]="bookFormGroup" (ngSubmit)="addBook()">
-      <input formControlName="autor" type="text" placeholder="Zadaj autor">
-      <input formControlName="title" type="text" placeholder="Zadaj nazov">
-      <input formControlName="count" type="text" placeholder="pocet stran">
-      <button type="submit">Pridat knihu</button>
-    </form>
+<ng-container *ngIf="actualMenu === menu.BOOKS">
+  <h3>KNIHY</h3>
+</ng-container>
 
-    <table>
-      <thead>
-      <th>Title</th>
-      <th>Autor</th>
-      <th>Nazov</th>
-      </thead>
-      <tbody>
-      <tr *ngFor="let book of books">
-        <td>{{book.title}}</td>
-        <td>{{book.author}}</td>
-        <td>{{book.count}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<ng-container *ngIf="actualMenu === menu.BORROWINGS">
+  <h3>VÝPOŽIČKY</h3>
+</ng-container>
 
 
-<div *ngIf="menu === menuType.Borrowing">
-  <form [formGroup]="borrowingFormGroup" (ngSubmit)="addBorrowing()">
-    <input formControlName="id" type="text" placeholder="Id">
-    <input formControlName="user" type="text" placeholder="Zadaj meno">
-    <input formControlName="book" type="text" placeholder="Nazov knihy">
-    <button type="submit">Pridat Vypozicku</button>
-  </form>
 
-  <table>
-    <thead>
-    <th>ID</th>
-    <th>Meno</th>
-    <th>Knihy</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let borrowing of borrowings">
-      <td>{{borrowing.id}}</td>
-      <td>{{borrowing.book}}</td>
-      <td>{{borrowing.user}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+

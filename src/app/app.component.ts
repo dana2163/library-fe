@@ -1,27 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from "@angular/forms";
 
-interface User {
-  id: string,
-  name: string,
-  contact: string
-}
-
-interface Book {
-  author: string,
-  title: string,
-  count: number
-}
-interface Borrowing {
-  id: string,
-  book: string,
-  user: string
-}
 
 enum Menu {
   Users = 'USERS',
   Books = 'BOOKS',
-  Borrowing = 'BORROWING'
+  Borrowing = 'BORROWING',
 }
 
 @Component({
@@ -30,51 +14,13 @@ enum Menu {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  bookFormGroup: FormGroup;
-  users: User[] = [];
-  books: Book[] = [];
-  borrowings: Borrowing[] = [];
-  menu = Menu.Books;
-  menuType = Menu;
-  userFormGroup: FormGroup;
-  borrowingFormGroup: FormGroup;
+  menu: Menu;
+  actualMenu = Menu.Users;
 
-  constructor() {
-    this.bookFormGroup = new FormGroup({
-      autor: new FormControl(null),
-      title: new FormControl(null),
-      count: new FormControl(null),
-    });
+  menuType: any;
 
-    this.userFormGroup = new FormGroup({
-      id: new FormControl(null),
-      name: new FormControl(null),
-      contact: new FormControl(null),
-    });
+    changeMenu = (menu: Menu): void => {
+      this.actualMenu = menu;
+    };
 
-    this.borrowingFormGroup = new FormGroup({
-      id: new FormControl(null),
-      book: new FormControl(null),
-      user: new FormControl(null),
-    });
-  }
-
-  addBook(): void {
-    this.books.push(this.bookFormGroup.value);
-    this.bookFormGroup.reset();
-  }
-
-  addUser(): void {
-    this.users.push(this.userFormGroup.value);
-    this.userFormGroup.reset();
-  }
-
-  addBorrowing(): void {
-    this.borrowings.push(this.borrowingFormGroup.value);
-    this.borrowingFormGroup.reset();
-  }
-
-  changeMenu(menu: Menu): void {
-    this.menu = menu;
-  }
 }
