@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {User} from "../model/user.model";
 
 
 enum Menu {
@@ -9,18 +10,18 @@ enum Menu {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
 
-  form: FormGroup;
-  users: Array<User> = [];
+  userForm: FormGroup;
+  users: User [] = [];
 
 
   constructor() {
-    this.form = new FormGroup({
+    this.userForm = new FormGroup({
       id: new FormControl(null, Validators.required),
       name: new FormControl(null, Validators.required),
       contact: new FormControl(null, [Validators.required,
@@ -28,17 +29,17 @@ export class UserComponent {
     })
   }
 
-  saveBook(): void {
-    this.users.push(this.form.value);
-    this.form.reset();
+  saveUser(): void {
+    this.users.push(this.userForm.value);
+    this.userForm.reset();
   }
 
-  editBook(index: number): void {
-    this.form.setValue(this.users[index]);
-    this.deleteBook(index);
+  editUser(index: number): void {
+    this.userForm.setValue(this.users[index]);
+    this.deleteUser(index);
   }
 
-  deleteBook(index: number): void {
+  deleteUser(index: number): void {
     this.users.splice(index, 1);
   }
 }

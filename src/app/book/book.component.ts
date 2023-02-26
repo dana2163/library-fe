@@ -1,24 +1,21 @@
 import { Component } from '@angular/core';
-import {Book} from '../model/book.model';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
-class Book {
-}
+import {Book} from "../model/book.model";
 
 @Component({
-    selector: 'app-user',
-    templateUrl: './user.component.html',
-    styleUrls: ['./user.component.css']
+    selector: 'app-book',
+    templateUrl: './book.component.html',
+    styleUrls: ['./book.component.css']
 })
 export class BookComponent {
 
     form: FormGroup;
-    books: Array<Book> = [];
+    books: Book[] = [];
 
 
     constructor() {
         this.form = new FormGroup({
-            autor: new FormControl(null, Validators.required),
+            author: new FormControl(null, Validators.required),
             title: new FormControl(null, Validators.required),
             count: new FormControl(null, [Validators.required,
                 Validators.minLength(3)]),

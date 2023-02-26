@@ -1,5 +1,5 @@
-<div *ngIf="menu === menuType.Borrowing">
-    <form [formGroup]="borrowingFormGroup" (ngSubmit)="addBorrowing()">
+<div>
+    <form [formGroup]="form" (ngSubmit)="saveBorrowing()">
         <input formControlName="id" type="text" placeholder="Id">
         <input formControlName="user" type="text" placeholder="Zadaj meno">
         <input formControlName="book" type="text" placeholder="Nazov knihy">

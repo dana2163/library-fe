@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Borrowing} from "../model/borrowing.mode";
 
-
-class borrowing {
-}
 
 @Component({
   selector: 'app-borrowing',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  templateUrl: './borrowing.component.html',
+  styleUrls: ['./borrowing.component.css']
 })
 export class BorrowingComponent {
-
   form: FormGroup;
-  borrowings: Array<borrowing> = [];
-  private  borrowings: any;
+  borrowings: Borrowing[] = [];
 
 
   constructor() {

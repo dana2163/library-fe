@@ -1,5 +1,5 @@
-<div *ngIf="menu === menuType.Books">
-    <form [formGroup]="bookFormGroup" (ngSubmit)="addBook()">
+<div>
+    <form [formGroup]="form" (ngSubmit)="saveBook()">
         <input formControlName="autor" type="text" placeholder="Zadaj autor">
         <input formControlName="title" type="text" placeholder="Zadaj nazov">
         <input formControlName="count" type="text" placeholder="pocet stran">

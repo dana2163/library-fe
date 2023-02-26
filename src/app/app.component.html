@@ -1,24 +1,9 @@
 <nav>
   <ul>
-    <li (click)="changeMenu(menuType.Users)" routerLink="/user" routerLinkActive="active" >User</li>
-    <li (click)="changeMenu(menuType.Books)" routerLink="/book" routerLinkActive="active">Books</li>
-    <li (click)="changeMenu(menuType.Borrowing)" routerLink="/borrowing" routerLinkActive="active">Borrowing</li>
+    <li  routerLink="user" routerLinkActive="active" >User</li>
+    <li  routerLink="book" routerLinkActive="active">Books</li>
+    <li  routerLink="borrowing" routerLinkActive="active">Borrowing</li>
   </ul>
 </nav>
 
-
-<ng-container *ngIf="actualMenu === menu.USERS">
-  <router-outlet></router-outlet>
-</ng-container>
-
-<ng-container *ngIf="actualMenu === menu.BOOKS">
-  <h3>KNIHY</h3>
-</ng-container>
-
-<ng-container *ngIf="actualMenu === menu.BORROWINGS">
-  <h3>VÝPOŽIČKY</h3>
-</ng-container>
-
-
-
-
+<router-outlet></router-outlet>
