@@ -1,0 +1,28 @@
+<div>
+    <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+        <input formControlName="id" type="text" placeholder="Zadaj id">
+        <input formControlName="name" type="text" placeholder="Zadaj meno">
+        <input formControlName="contact" type="text" placeholder="Zadaj kontakt">
+        <button type="submit">Pridat usera</button>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Meno</th>
+            <th>Kontakt</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.contact}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<h1>Users</h1>
+

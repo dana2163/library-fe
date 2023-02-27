@@ -1,20 +1,9 @@
-<div class="input-container">
-  <label>Desiatková sústava:</label>
-  <input
-    type="number"
-    [(ngModel)]="decimalNumber"
-    (ngModelChange)="decimalToBinary()"
-  />
-</div>
-<div class="input-container">
-  <label>Binárna sústava:</label>
-  <div class="binary-input">
-    <div *ngFor="let bit of binaryArray; let i = index; trackBy: trackByIndex">
-      <input
-        type="checkbox"
-        [(ngModel)]="binaryArray[i]"
-        (ngModelChange)="binaryToDecimal()"
-      />
-    </div>
-  </div>
-</div>
+<nav>
+  <ul>
+    <li  routerLink="user" routerLinkActive="active" >User</li>
+    <li  routerLink="book" routerLinkActive="active">Books</li>
+    <li  routerLink="borrowing" routerLinkActive="active">Borrowing</li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
