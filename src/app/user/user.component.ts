@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../model/user.model";
 
-
-enum Menu {
-  Users = 'USERS',
-  Books = 'BOOKS',
-  Borrowing = 'BORROWING',
-}
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -34,12 +27,5 @@ export class UserComponent {
     this.userForm.reset();
   }
 
-  editUser(index: number): void {
-    this.userForm.setValue(this.users[index]);
-    this.deleteUser(index);
-  }
 
-  deleteUser(index: number): void {
-    this.users.splice(index, 1);
-  }
 }

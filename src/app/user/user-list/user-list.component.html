@@ -1,0 +1,15 @@
+
+<table *ngIf="users.length">
+    <tr>
+        <th>Meno</th>
+        <th>Priezvisko</th>
+    </tr>
+    <tr *ngFor="let user of users; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.surname }}</td>
+        <td>
+            <button (click)="editUser(i)">Upravit</button>
+            <button (click)="deleteUser(i)">Zmazat</button>
+        </td>
+    </tr>
+</table>
