@@ -15,13 +15,13 @@ export class UserPageComponent {
     this.users.push(user);
   }
 
-  updateUser(user: User): void {
+  editUser(user: User): void {
     const index = this.users.findIndex(p => p.id === user.id);
     if (index !== -1) {
       this.users[index] = user;
     }
   }
-  selectUserToUpdate(userId: number): void {
+  selectUserToEdit(userId: number): void {
     this.user = this.users.find(user => user.id === userId);
   }
 

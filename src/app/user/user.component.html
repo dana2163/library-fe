@@ -1,8 +1,8 @@
 <div>
     <form [formGroup]="userForm" (ngSubmit)="saveUser()">
-        <input formControlName="id" type="text" placeholder="Zadaj id">
-        <input formControlName="name" type="text" placeholder="Zadaj meno">
-        <input formControlName="contact" type="text" placeholder="Zadaj kontakt">
+        <input formControlName="firstName" type="text" placeholder="Zadaj meno">
+        <input formControlName="lastName" type="text" placeholder="Zadajte priezvisko">
+        <input formControlName="emailContact" type="text" placeholder="Zadaj kontakt">
         <button type="submit">Pridat usera</button>
     </form>
 
@@ -24,4 +24,5 @@
     </table>
 </div>
 
+<h1>Users</h1>
 
