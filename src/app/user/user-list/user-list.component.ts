@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {User} from "../../model/user.model";
 
 
 @Component({
@@ -9,24 +9,20 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 
 export class UserListComponent {
-  users: any[] = [];
-  form: FormGroup;
+  @Input()
+  users: Array<User> = [];
 
-  constructor() {
-    this.form = new FormGroup({
-      id: new FormControl(null, Validators.required),
-      name: new FormControl(null, Validators.required),
-      surname: new FormControl(null, Validators.required)
-    });
+  @Output()
+  userToUpdate = new EventEmitter<number>();
+
+  @Output()
+  personToDelete = new EventEmitter<number>();
+
+  editUser(userId: number): void {
+    this.userToUpdate.emit(userId);
   }
 
-
-  deleteUser(i: number): void {
-    this.users.splice(i, 1);
-  }
-
-  editUser(i: number): void {
-    this.form.setValue(this.users[i]);
-    this.deleteUser(i);
+  deleteUser(userId: number): void {
+    this.personToDelete.emit(userId);
   }
 }

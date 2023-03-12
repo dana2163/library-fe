@@ -9,33 +9,27 @@ import {User} from "../../model/user.model";
 })
 export class UserPageComponent {
   users: Array<User> = [];
+  selectedUser: any;
 
   createUser(user: User): void {
     this.users.push(user);
   }
 
-    editUser(user: User): void {
+  editUser(user: User): void {
     const index = this.users.findIndex(p => p.id === user.id);
     if (index !== -1) {
       this.users[index] = user;
     }
   }
   selectUserToUpdate(userId: number): void {
-    const index = this.users.findIndex(p => p.id === userId);
-    if (index !== -1) {
-      const userToUpdate = Object.assign({}, this.users[index]);
-      this.openUpdateUserForm(userToUpdate);
-    }
+    const index = this.users.findIndex(user => user.id === userId);
   }
 
   deleteUser(userId: number): void {
-    const index = this.users.findIndex(p => p.id === userId);
+    const index = this.users.findIndex(user => user.id === userId);
     if (index !== -1) {
       this.users.splice(index, 1);
     }
   }
 
-  openUpdateUserForm(user: User): void {
-    // TODO: Implement method to open update user form with the given user object
-  }
 }

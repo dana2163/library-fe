@@ -1,3 +1,11 @@
-<h3>POUŽÍVATELIA</h3>
-<app-user-list></app-user-list>
-<app-user-form></app-user-form>>
+
+<app-user-list [users]="users"
+               (deleteUser)="deleteUser($event)"
+               (editUser)="selectUserToUpdate($event)">
+</app-user-list>
+
+<h2>Add / Edit User</h2>
+
+<app-user-form [users]="selectedUser"
+               (submit)="submit($event)">
+</app-user-form>
