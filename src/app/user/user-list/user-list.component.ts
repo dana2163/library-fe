@@ -16,13 +16,13 @@ export class UserListComponent {
   userToUpdate = new EventEmitter<number>();
 
   @Output()
-  personToDelete = new EventEmitter<number>();
+  userToDelete = new EventEmitter<number>();
 
   editUser(userId: number): void {
     this.userToUpdate.emit(userId);
   }
 
   deleteUser(userId: number): void {
-    this.personToDelete.emit(userId);
+    this.userToDelete.emit(userId);
   }
 }

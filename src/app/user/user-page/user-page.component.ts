@@ -9,20 +9,20 @@ import {User} from "../../model/user.model";
 })
 export class UserPageComponent {
   users: Array<User> = [];
-  selectedUser: any;
+  user?: User;
 
   createUser(user: User): void {
     this.users.push(user);
   }
 
-  editUser(user: User): void {
+  updateUser(user: User): void {
     const index = this.users.findIndex(p => p.id === user.id);
     if (index !== -1) {
       this.users[index] = user;
     }
   }
   selectUserToUpdate(userId: number): void {
-    const index = this.users.findIndex(user => user.id === userId);
+    this.user = this.users.find(user => user.id === userId);
   }
 
   deleteUser(userId: number): void {

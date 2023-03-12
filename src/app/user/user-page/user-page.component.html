@@ -1,11 +1,16 @@
 
-<app-user-list [users]="users"
-               (deleteUser)="deleteUser($event)"
-               (editUser)="selectUserToUpdate($event)">
+
+<h3>POUŽÍVATELIA</h3>
+
+<app-user-form
+        [users]="users"
+        (createForm)="createUser($event)"
+        (saveUser)="updateUser($event)">
+</app-user-form>
+
+<app-user-list
+        [users]="users"
+        (userToUpdate)="selectUserToUpdate($event)"
+        (userToDelete)="deleteUser($event)">
 </app-user-list>
 
-<h2>Add / Edit User</h2>
-
-<app-user-form [users]="selectedUser"
-               (submit)="submit($event)">
-</app-user-form>
