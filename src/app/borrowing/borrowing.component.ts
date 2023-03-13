@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Borrowing} from "../model/borrowing.mode";
+import {Borrowing} from "../model/borrowing.model";
 
 
 @Component({
@@ -27,12 +27,5 @@ export class BorrowingComponent {
     this.form.reset();
   }
 
-  editBorrowing(index: number): void {
-    this.form.setValue(this.borrowings[index]);
-    this.deleteBorrowing(index);
-  }
 
-  deleteBorrowing(index: number): void {
-    this.borrowings.splice(index, 1);
-  }
 }
