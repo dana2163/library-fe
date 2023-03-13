@@ -9,6 +9,9 @@ import { BorrowingComponent } from './borrowing/borrowing.component';
 import {UserFormComponent} from "./user/user-form/user-form.component";
 import {UserListComponent} from "./user/user-list/user-list.component";
 import { UserPageComponent } from './user/user-page/user-page.component';
+import { BookListComponent } from './book/book-list/book-list.component';
+import { BookFormComponent } from './book/book-form/book-form.component';
+import { BookPageComponent } from './book/book-page/book-page.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { UserPageComponent } from './user/user-page/user-page.component';
         BookComponent,
         BorrowingComponent,
         UserPageComponent,
+        BookListComponent,
+        BookFormComponent,
+        BookPageComponent,
     ],
     imports: [
         BrowserModule,
