@@ -1,15 +1,15 @@
 <form [formGroup]="form" (submit)="submit()">
     <label>
         Meno:
-        <input type="text" formControlName="firstname">
+        <input type="text" formControlName="firstName">
     </label>
-    <p *ngIf="form.controls['firstname'].invalid" class="invalid-text">Zadajte meno</p>
+    <p *ngIf="form.controls['firstName'].invalid" class="invalid-text">Zadajte meno</p>
 
     <label>
         Priezvisko:
-        <input type="text" formControlName="surname">
+        <input type="text" formControlName="lastName">
     </label>
-    <p *ngIf="form.controls['surname'].invalid" class="invalid-text">Zadajte priezvisko</p>
+    <p *ngIf="form.controls['lastName'].invalid" class="invalid-text">Zadajte priezvisko</p>
 
     <label>
         Email:

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from "./user/user.component";
 import { BookComponent } from "./book/book.component";
 import { BorrowingComponent } from "./borrowing/borrowing.component";
+import {UserPageComponent} from "./user/user-page/user-page.component";
 
 const routes: Routes = [
     {
         path: 'user',
-        component: UserComponent,
+        component: UserPageComponent,
     },
     {
         path: 'book',

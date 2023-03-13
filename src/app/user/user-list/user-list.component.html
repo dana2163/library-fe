@@ -4,12 +4,12 @@
         <th>Meno</th>
         <th>Priezvisko</th>
     </tr>
-    <tr *ngFor="let user of users; let i = index">
-        <td>{{ user.name }}</td>
-        <td>{{ user.surname }}</td>
+    <tr *ngFor="let user of users;">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
         <td>
-            <button (click)="editUser(i)">Upravit</button>
-            <button (click)="deleteUser(i)">Zmazat</button>
+            <button (click)="editUser(user)">Upravit</button>
+            <button (click)="deleteUser(user.id)">Zmazat</button>
         </td>
     </tr>
 </table>

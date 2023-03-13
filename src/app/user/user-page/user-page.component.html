@@ -4,13 +4,14 @@
 
 <app-user-form
         [users]="users"
+        [userToEdit]="userToEdit"
         (createForm)="createUser($event)"
         (saveUser)="editUser($event)">
 </app-user-form>
 
 <app-user-list
         [users]="users"
-        (userToEdit)="selectUserToEdit($event)"
+        (userToEdit)="setUserToEdit($event)"
         (userToDelete)="deleteUser($event)">
 </app-user-list>
 
