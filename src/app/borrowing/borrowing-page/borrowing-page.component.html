@@ -1,0 +1,12 @@
+<app-borrowing-form
+        [borrowings] = "borrowings"
+        [borrowingToEdit]="borrowingToEdit"
+        (createForm)="createBorrowing($event)"
+        (saveBorrowing)="editBorrowing($event)">
+</app-borrowing-form>
+
+<app-borrowing-list
+        [borrowings]="borrowings"
+        (borrowingToEdit)="setBorrowingToEdit($event)"
+        (borrowingToDelete)="deleteBorrowing($event)">
+</app-borrowing-list>
