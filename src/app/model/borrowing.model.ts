@@ -1,6 +1,6 @@
 export interface Borrowing {
-    borrowingId: string;
-    id: string,
+    borrowingId: number;
+    id: number,
     book: string,
     user: string
 }

@@ -9,6 +9,12 @@ import {UserFormComponent} from "./user/user-form/user-form.component";
 import {UserListComponent} from "./user/user-list/user-list.component";
 import { UserPageComponent } from './user/user-page/user-page.component';
 import {HttpClientModule} from "@angular/common/http";
+import { BorrowingPageComponent } from './borrowing/borrowing-page/borrowing-page.component';
+import { BorrowingListComponent } from "./borrowing/borrowing-page/borrowing-list/borrowing-list.component";
+import { BorrowingFormComponent } from './borrowing/borrowing-form/borrowing-form.component';
+import { BookPageComponent } from './book/book-page/book-page.component';
+import { BookListComponent } from './book/book-list/book-list.component';
+import { BookFormComponent } from './book/book-form/book-form.component';
 
 
 
@@ -20,6 +26,12 @@ import {HttpClientModule} from "@angular/common/http";
         UserListComponent,
         BookComponent,
         BorrowingComponent,
+        BorrowingPageComponent,
+        BorrowingListComponent,
+        BorrowingFormComponent,
+        BookPageComponent,
+        BookListComponent,
+        BookFormComponent,
 
     ],
     imports: [
