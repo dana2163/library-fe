@@ -1,0 +1,13 @@
+<h2>BORROWINGS</h2>
+<form [formGroup]="form">
+    <label>USER ID:
+        <input formControlName="user" type="text">
+    </label>
+
+
+    <label>BOOK ID:
+        <input formControlName="book" type="text">
+    </label>
+
+    <button type="button" (click)="submit()">Submit</button>
+</form>
