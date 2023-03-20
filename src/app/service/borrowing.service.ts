@@ -3,7 +3,10 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Borrowing} from "../model/borrowing.model";
 
-@Injectable()
+@Injectable({
+    providedIn: "root"
+})
+
 export class BorrowingService {
 
     private url = 'http://localhost:5432/borrowing';

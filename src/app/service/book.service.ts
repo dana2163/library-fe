@@ -3,7 +3,9 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Book} from "../model/book.model";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class BookService {
 
   private url = 'http://localhost:5432/book';

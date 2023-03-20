@@ -28,9 +28,9 @@ export class BorrowingFormComponent {
 
   submit(): void {
     if (this.form.valid) {
-      if (this.form.controls.id.value) {
+      if (this.form.controls['id'].value) {
         this.formUpdate.emit(
-            this.prepareBorrowing(this.form.controls.id.value));
+            this.prepareBorrowing(this.form.controls['id'].value));
       } else {
         this.formCreate.emit(this.prepareBorrowing());
       }
@@ -40,10 +40,10 @@ export class BorrowingFormComponent {
   private prepareBorrowing(id?: number): Borrowing {
     return {
       id: id !== undefined ? id : Date.now(),
-      userId: this.form.controls.userId.value,
-      bookId: this.form.controls.bookId.value,
-      borrowDate: this.form.controls.borrowDate.value,
-      returnDate: this.form.controls.returnDate.value
+      userId: this.form.controls['userId'].value,
+      bookId: this.form.controls['bookId'].value,
+      borrowDate: this.form.controls['borrowDate'].value,
+      returnDate: this.form.controls['returnDate'].value
     };
   }
 }

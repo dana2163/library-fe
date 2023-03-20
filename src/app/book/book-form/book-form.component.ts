@@ -25,30 +25,16 @@ export class BookFormComponent {
 
   submit(): void {
     if (this.form.valid) {
-      if (this.form.controls['id'].value) {
-        this.formUpdate.emit(this.prepareBook(this.form.controls['id'].value));
-      } else {
-        this.formCreate.emit(this.prepareBook());
-      }
+      this.formCreate.emit(this.form.value);
       this.form.reset();
     }
   }
 
   constructor() {
     this.form = new FormGroup({
-      id: new FormControl(null),
       name: new FormControl(null, Validators.required),
       author: new FormControl(null, [Validators.required, Validators.minLength(3)]),
       available: new FormControl(null),
     });
-  }
-
-  private prepareBook(id?: number): Book {
-    return {
-      id: id !== undefined ? id : Date.now(),
-      name: this.form.controls['name'].value,
-      author: this.form.controls['author'].value,
-      available: this.form.controls['available'].value,
-    };
   }
 }
