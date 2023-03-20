@@ -1,17 +1,9 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {Borrowing} from "../../model/borrowing.model";
+import {BorrowingService} from "../../service/borrowing.service";
 import {Router} from "@angular/router";
+import {ToastService} from "angular-toastify";
 
-class BorrowingService {
-  private borrowingService: any;
-  deleteBorrowing(borrowingId: number) {
-
-  }
-
-}
-
-class ToastService {
-}
 
 @Component({
   selector: 'app-borrowing-page',
@@ -41,8 +33,8 @@ export class BorrowingPageComponent {
   }
 
   deleteBorrowing(borrowingId: number): void {
-    this.userService.deleteBorrowing(BorrowindId).subscribe(BorrowindId => {
-      console.log(BorrowindId);
+    this.userService.deleteBorrowing(borrowingId).subscribe(() => {
+      console.log(borrowingId);
       this.getBorrowings();
     })
   }

@@ -33,8 +33,6 @@ function BorrowingComponent() {
         UserPageComponent,
         UserFormComponent,
         UserListComponent,
-        BookComponent,
-        BorrowingComponent,
         BorrowingPageComponent,
         BorrowingListComponent,
         BorrowingFormComponent,

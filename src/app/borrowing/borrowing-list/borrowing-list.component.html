@@ -6,8 +6,8 @@
     </tr>
     <tr *ngFor="let borrowing of borrowings">
         <td>{{ borrowing.id }}</td>
-        <td>{{ borrowing.user }}</td>
-        <td>{{ borrowing.book }}</td>
+        <td>{{ borrowing.userId }}</td>
+        <td>{{ borrowing.bookId }}</td>
         <td>
             <button (click)="deleteBorrowing(borrowing.id)" class="btn btn-danger">Delete</button>
             <button (click)="editBorrowing(borrowing.id)" class="btn btn-secondary ml-2">Edit</button>

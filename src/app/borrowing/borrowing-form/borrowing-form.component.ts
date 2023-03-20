@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Borrowing} from "../../model/borrowing.model";
 
@@ -10,7 +10,8 @@ import {Borrowing} from "../../model/borrowing.model";
 export class BorrowingFormComponent {
 
   form: FormGroup;
-  @Input() set borrowingData(borrowing: Borrowing | undefined) {
+  @Input
+  () set borrowingData(borrowing: Borrowing | undefined) {
     if(borrowing){
       this.form.setValue(borrowing);
     }
@@ -38,10 +39,9 @@ export class BorrowingFormComponent {
   }
   private prepareBorrowing(id?: number): Borrowing {
     return {
-      user: "",
       id: id !== undefined ? id : Date.now(),
       userId: this.form.controls.userId.value,
-      book: this.form.controls.book.value,
+      bookId: this.form.controls.bookId.value,
       borrowDate: this.form.controls.borrowDate.value,
       returnDate: this.form.controls.returnDate.value
     };

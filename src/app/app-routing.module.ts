@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from "./book/book.component";
-import { BorrowingComponent } from "./borrowing/borrowing.component";
 import {UserPageComponent} from "./user/user-page/user-page.component";
+import {BookPageComponent} from "./book/book-page/book-page.component";
+import {BorrowingPageComponent} from "./borrowing/borrowing-page/borrowing-page.component";
 
 const routes: Routes = [
     {
@@ -11,11 +11,11 @@ const routes: Routes = [
     },
     {
         path: 'book',
-        component: BookComponent,
+        component: BookPageComponent,
     },
     {
         path: 'borrowing',
-        component: BorrowingComponent,
+        component: BorrowingPageComponent,
     },
     // Перенаправляем пустой путь на компонент UserComponent
     {
