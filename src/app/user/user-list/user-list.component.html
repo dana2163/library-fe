@@ -1,10 +1,10 @@
 
-<table *ngIf="users.length">
+<table *ngIf="users?.content?.length">
     <tr>
         <th>Meno</th>
         <th>Priezvisko</th>
     </tr>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users?.content">
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>
@@ -13,4 +13,3 @@
         </td>
     </tr>
 </table>
-

@@ -24,6 +24,8 @@ export class UserFormComponent {
     @Input()
     users: User [] = [];
     @Output()
+    formCreate = new EventEmitter<User>();
+    @Output()
     saveUser = new EventEmitter<User>();
     @Output()
     createForm = new EventEmitter<any>();
@@ -43,7 +45,6 @@ export class UserFormComponent {
             this.createForm.emit(this.form.value);
             this.form.reset();
         }
+
     }
-
-
 }

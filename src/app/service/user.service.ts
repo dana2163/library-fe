@@ -13,7 +13,7 @@ export class UserService{
     constructor(private http:HttpClient) {
     }
 
-    getPersons(): Observable<User[]> {
+    getUsers(): Observable<User[]> {
         return this.http.get<User[]>(`${this.apiUrl}`);
 
     }
@@ -29,4 +29,7 @@ export class UserService{
      editUser(user: User): Observable<number> {
          return this.http.put<number>(`${this.apiUrl}/${user.id}`, user);
      }
+     getUser(userId: number): Observable<User> {
+            return this.http.get<User>(`${this.apiUrl}/${userId}`);
+        }
 }

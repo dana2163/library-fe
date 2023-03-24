@@ -12,6 +12,8 @@
 <app-user-list
         [users]="users"
         (userToEdit)="setUserToEdit($event)"
-        (userToDelete)="deleteUser($event)">
+        (userToDelete)="deleteUser($event)"
+        (pageChange)="getUsers()">
+
 </app-user-list>
 

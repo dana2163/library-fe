@@ -43,8 +43,13 @@ nav li {
   padding: 10px;
 }
 
-nav li:hover {
+nav li:hover:not(.active) {
   background-color: #555;
+
+}
+
+.active{
+  background: gray;
 }
 
 table {
@@ -158,6 +163,3 @@ button:hover {
   cursor: pointer;
 }
 
-.active{
-  background: red;
-}

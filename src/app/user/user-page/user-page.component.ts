@@ -23,7 +23,7 @@ export class UserPageComponent implements OnInit {
     }
 
     getUsers(): void {
-        this.userService.getPersons().subscribe(users => {
+        this.userService.getUsers().subscribe(users => {
             this.users = users;
         })
     }

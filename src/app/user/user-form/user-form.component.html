@@ -18,4 +18,5 @@
     <p *ngIf="form.controls['contact'].invalid" class="invalid-text">Zadajte platnú e-mailovú adresu</p>
 
     <button type="submit" [disabled]="form.invalid">Uložiť</button>
+    <button type="button" (click)="formCancel()">Zrušiť</button>
 </form>
