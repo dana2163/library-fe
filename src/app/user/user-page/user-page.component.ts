@@ -15,6 +15,7 @@ export class UserPageComponent implements OnInit {
     userToEdit?: User;
 
     constructor(private userService: UserService) {
+        this.getUsers();
 
     }
 
