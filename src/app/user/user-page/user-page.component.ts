@@ -16,7 +16,6 @@ export class UserPageComponent implements OnInit {
 
     constructor(private userService: UserService) {
         this.getUsers();
-
     }
 
     ngOnInit() {
@@ -29,24 +28,6 @@ export class UserPageComponent implements OnInit {
         })
     }
 
-    createUser(user: User): void {
-        this.userService.createUser(user).subscribe(() => {
-            console.log('User ulozen')
-            this.getUsers();
-
-        })
-
-    }
-
-    editUser(user: User): void {
-        this.userService.editUser(user).subscribe(() => {
-            console.log('User vypraven')
-            this.getUsers();
-        })
-
-
-    }
-
     setUserToEdit(user: User): void {
         this.userToEdit = user;
     }
@@ -56,7 +37,5 @@ export class UserPageComponent implements OnInit {
             console.log(userId);
             this.getUsers();
         })
-
     }
-
 }

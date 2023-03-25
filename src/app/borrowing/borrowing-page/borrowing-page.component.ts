@@ -33,7 +33,7 @@ export class BorrowingPageComponent {
   }
 
   deleteBorrowing(borrowingId: number): void {
-    this.userService.deleteBorrowing(borrowingId).subscribe(() => {
+    this.borrowingService.deleteBorrowing(borrowingId).subscribe(() => {
       console.log(borrowingId);
       this.getBorrowings();
     })

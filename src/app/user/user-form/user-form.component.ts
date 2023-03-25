@@ -24,11 +24,11 @@ export class UserFormComponent {
     @Input()
     users: User [] = [];
     @Output()
-    formCreate = new EventEmitter<User>();
+    formUpdate = new EventEmitter<User>();
     @Output()
     saveUser = new EventEmitter<User>();
     @Output()
-    createForm = new EventEmitter<any>();
+    createForm = new EventEmitter<User>();
 
 
     constructor() {

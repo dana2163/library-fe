@@ -36,7 +36,6 @@ const routes: Routes = [
         children: [
             { path: '', component: BorrowingListComponent },
             { path: 'form', component: BorrowingFormComponent },
-            { path: ':borrowingId', component: BorrowingDetailPageComponent },
         ],
     },
 

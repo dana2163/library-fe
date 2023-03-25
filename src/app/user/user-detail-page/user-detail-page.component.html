@@ -1,5 +1,4 @@
 <app-user-form
-        [userToEdit]="editUser()"
-        >
-
+        [userToEdit]="person"
+        (formUpdate)="editUser($event)">
 </app-user-form>
