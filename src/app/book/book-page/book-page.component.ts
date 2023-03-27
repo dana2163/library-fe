@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
-import {Book} from "../../model/book.model";
-import {BookService} from '../../service/book.service';
+import { Component } from '@angular/core';
+import { Book } from "../../model/book.model";
+import { BookService } from "../../service/book.service";
+import { Router } from "@angular/router";
+import { ToastService } from "angular-toastify";
 
 @Component({
     selector: 'app-book-page',
@@ -9,48 +11,25 @@ import {BookService} from '../../service/book.service';
 })
 export class BookPageComponent {
     books: Array<Book> = [];
-    book?: Book;
 
-    constructor(private service: BookService) {
+    constructor(private bookService: BookService, private toastService: ToastService, private router: Router) {
         this.getBooks();
     }
 
     getBooks(): void {
-        this.service.getBooks().subscribe((books: Book[]) => {
+        this.bookService.getBooks().subscribe((books: Book[]) => {
             this.books = books;
-        })
+        });
     }
-
-
-    createBook(book: Book): void {
-        this.service.createBook(book)
-            .subscribe(() => {
-                console.log('Kniha bola uspesne ulozena.')
-                this.getBooks();
-            })
-    }
-
-    updateBook(book: Book): void {
-        this.service.updateBook(book)
-            .subscribe(() => {
-                console.log('Kniha bola uspesne upravena.')
-                this.getBooks();
-            })
-    }
-
 
     selectBookToUpdate(bookId: number): void {
-        this.service.getBook(bookId)
-            .subscribe((book: Book) => {
-                this.book = book;
-            })
+        this.router.navigate(['book', bookId]);
     }
 
     deleteBook(bookId: number): void {
-        this.service.deleteBook(bookId).subscribe(() => {
-            console.log('Kniha bola uspesne zmazana.')
+        this.bookService.deleteBook(bookId).subscribe(() => {
+            console.log(bookId);
             this.getBooks();
         })
     }
-
 }

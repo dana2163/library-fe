@@ -1,1 +1,5 @@
 <p>book-detail-page works!</p>
+<app-book-form
+        [bookData]="book"
+        (formUpdate)="updateBook($event)">
+</app-book-form>
