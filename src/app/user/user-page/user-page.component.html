@@ -1,0 +1,12 @@
+<h3>POUŽÍVATELIA</h3>
+
+<app-user-form
+        [userToEdit]="user">
+</app-user-form>
+
+<app-user-list
+        (userToEdit)="setUserToEdit($event)"
+        (userToDelete)="deleteUser($event)"
+        (pageChange)="getUsers()">
+</app-user-list>
+

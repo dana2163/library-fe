@@ -1,0 +1,7 @@
+<app-borrowing-form [borrowingData]="borrowing"></app-borrowing-form>
+
+<app-borrowing-list
+        [borrowings]="borrowings"
+        (borrowingToUpdate)="selectBorrowingToUpdate($event)"
+        (borrowingToDelete)="deleteBorrowing($event)">
+</app-borrowing-list>
