@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Borrowing} from "../../model/borrowing.model";
+import {Borrowing} from "../../common/model/borrowing.model";
 
 @Component({
   selector: 'app-borrowing-form',

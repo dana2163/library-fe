@@ -3,8 +3,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ToastService } from "angular-toastify";
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import {BorrowingService} from "../../service/borrowing.service";
-import {Borrowing} from "../../model/borrowing.model";
+import {BorrowingService} from "../../common/service/borrowing.service";
+import {Borrowing} from "../../common/model/borrowing.model";
 
 @Component({
   selector: 'app-borrowing-detail-page',

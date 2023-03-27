@@ -7,7 +7,7 @@
   },
   "files": [
     "src/main.ts",
-    "src/app/model/borrowing.model.ts"
+    "src/app/common/model/borrowing.model.ts"
   ],
   "include": [
     "src/**/*.d.ts"

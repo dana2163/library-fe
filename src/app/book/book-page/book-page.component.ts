@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Book } from "../../model/book.model";
-import { BookService } from "../../service/book.service";
+import { Book } from "../../common/model/book.model";
+import { BookService } from "../../common/service/book.service";
 import { Router } from "@angular/router";
 import { ToastService } from "angular-toastify";
 

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../model/user.model';
+import { User } from '../../common/model/user.model';
 import { FormControl, FormGroup } from '@angular/forms';
-import {Pagination} from "../../model/pagination.mode";
-import {Page} from "../../model/page.model";
+import {Pagination} from "../../common/model/pagination.mode";
+import {Page} from "../../common/model/page.model";
 
 @Component({
   selector: 'app-user-list',

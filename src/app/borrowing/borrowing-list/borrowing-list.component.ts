@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Borrowing} from "../../model/borrowing.model";
+import {Borrowing} from "../../common/model/borrowing.model";
 
 @Component({
   selector: 'app-borrowing-list',

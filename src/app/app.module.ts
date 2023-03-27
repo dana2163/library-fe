@@ -15,9 +15,11 @@ import {BorrowingPageComponent} from "./borrowing/borrowing-page/borrowing-page.
 import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.component";
 import { UserDetailPageComponent } from './user/user-detail-page/user-detail-page.component';
 import {AngularToastifyModule, ToastService} from "angular-toastify";
-import {UserService} from "./service/user.service";
+import {UserService} from "./common/service/user.service";
 import { BorrowingDetailPageComponent } from './borrowing/borrowing-detail-page/borrowing-detail-page.component';
 import { BookDetailPageComponent } from './book/book-detail-page/book-detail-page.component';
+import { LoginPageComponent } from './auntification/login-page/login-page.component';
+import { AuthHeaderInterceptorComponent } from './auntification/interceptor/auth-header.interceptor/auth-header.interceptor.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { BookDetailPageComponent } from './book/book-detail-page/book-detail-pag
         UserDetailPageComponent,
         BorrowingDetailPageComponent,
         BookDetailPageComponent,
+        LoginPageComponent,
+        AuthHeaderInterceptorComponent,
 
     ],
     imports: [

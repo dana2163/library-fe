@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastService } from 'angular-toastify';
-import { User } from "../../model/user.model";
-import { UserService } from "../../service/user.service";
+import { User } from "../../common/model/user.model";
+import { UserService } from "../../common/service/user.service";
 
 @Component({
   selector: 'app-user-detail-page',

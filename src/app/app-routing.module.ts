@@ -10,6 +10,7 @@ import {BookListComponent} from "./book/book-list/book-list.component";
 import {BookFormComponent} from "./book/book-form/book-form.component";
 import {BorrowingListComponent} from "./borrowing/borrowing-list/borrowing-list.component";
 import {BorrowingFormComponent} from "./borrowing/borrowing-form/borrowing-form.component";
+import {LoginPageComponent} from "./auntification/login-page/login-page.component";
 
 let BorrowingDetailPageComponent;
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
             { path: '', component: BorrowingListComponent },
             { path: 'form', component: BorrowingFormComponent },
         ],
+    },
+    {
+    path: 'login',
+    component: LoginPageComponent
     },
 
 ];

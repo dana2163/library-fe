@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Book } from "../../model/book.model";
+import { Book } from "../../common/model/book.model";
 import { ActivatedRoute, Router } from "@angular/router";
-import { BookService } from "../../service/book.service";
+import { BookService } from "../../common/service/book.service";
 import { ToastService } from "angular-toastify";
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';

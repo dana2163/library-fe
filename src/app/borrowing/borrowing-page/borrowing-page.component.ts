@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Borrowing } from "../../model/borrowing.model";
-import { BorrowingService } from "../../service/borrowing.service";
+import { Borrowing } from "../../common/model/borrowing.model";
+import { BorrowingService } from "../../common/service/borrowing.service";
 import { Router } from "@angular/router";
 import { ToastService } from "angular-toastify";
 
